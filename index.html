@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Pernikahan</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fff0f5, #ffe4e1);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      padding: 50px 20px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #c71585;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-top: -10px;
+      color: #800000;
+    }
+    .date {
+      font-size: 1.2rem;
+      margin: 20px 0;
+    }
+    .section {
+      margin: 40px 0;
+      padding: 20px;
+    }
+    .rsvp {
+      background-color: #fffafa;
+      padding: 30px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    footer {
+      margin: 50px 0 20px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Undangan Pernikahan</h1>
+    <h2>Rendi & Sri Putri</h2>
+    <div class="date">Sabtu, 1 Agustus 2025</div>
+    <p>Mall BTM</p>
+  </header>
+
+  <section class="section">
+    <h2>Assalamu'alaikum Wr. Wb.</h2>
+    <p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pernikahan kami.</p>
+  </section>
+
+  <section class="section rsvp">
+    <h2>Konfirmasi Kehadiran</h2>
+    <form onsubmit="return handleRSVP(event)">
+      <input type="text" id="name" placeholder="Nama Anda" required><br>
+      <button type="submit">Kirim</button>
+    </form>
+    <p id="thanks" style="display:none; color: green; font-weight: bold;"></p>
+  </section>
+
+  <footer>
+    <p>Terima kasih atas doa dan kehadirannya.</p>
+  </footer>
+
+  <script>
+    function handleRSVP(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      document.getElementById("thanks").textContent = `Terima kasih, ${name}, atas konfirmasi kehadiran Anda!`;
+      document.getElementById("thanks").style.display = "block";
+      event.target.reset();
+      return false;
+    }
+  </script>
+
+</body>
+</html>
